@@ -6,7 +6,7 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 13:54:17 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/29 16:52:09 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/12/01 17:10:46 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,17 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	fd = open(av[1], O_RDONLY);
-	if (fd < 0)
-	{
-		printf("Could not open file '%s' !\n", av[1]);
-		return (1);
-	}
+	printf("FOPEN_MAX = %d\n", FOPEN_MAX);
+	printf("File descriptor: %d\n", fd);
 	s = get_next_line(fd);
 	printf("%s", s);
 	free(s);
 	s = get_next_line(fd);
 	printf("%s", s);
 	free(s);
+	//s = get_next_line(fd);
+	//printf("%s", s);
+	//free(s);
+	close(fd);
 	return (0);
 }

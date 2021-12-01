@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 13:13:53 by apigeon           #+#    #+#             */
-/*   Updated: 2021/12/01 16:14:36 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/12/01 17:26:08 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	contains_newline(const char *s)
 {
@@ -64,13 +64,13 @@ char	*get_next_line(int fd)
 	char		*buff;
 	char		*tmp;
 	char		*string;
-	static char	*leftover = NULL;
+	static char	*leftover[OPEN_MAX] = {NULL};
 
-	if (fd < 0 || BUFFER_SIZE < 1 || read(fd, leftover, 0) == -1)
+	if (fd < 0 || BUFFER_SIZE < 1 || read(fd, leftover[fd], 0) == -1)
 		return (NULL);
 	ret = BUFFER_SIZE;
-	string = leftover;
-	leftover = NULL;
+	string = leftover[fd];
+	leftover[fd] = NULL;
 	while (ret == BUFFER_SIZE && !contains_newline(string))
 	{
 		buff = malloc(BUFFER_SIZE + 1);
@@ -80,7 +80,7 @@ char	*get_next_line(int fd)
 		buff[ret] = 0;
 		string = ft_strjoin(string, buff);
 	}
-	tmp = extract_line(string, &leftover);
+	tmp = extract_line(string, &leftover[fd]);
 	free(string);
 	return (tmp);
 }
