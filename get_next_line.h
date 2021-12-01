@@ -6,7 +6,7 @@
 /*   By: apigeon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 19:15:45 by apigeon           #+#    #+#             */
-/*   Updated: 2021/11/29 15:45:15 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/11/30 13:13:38 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 typedef struct s_list
 {
 	char			*s;
-	int				size;
 	struct s_list	*next;
 }				t_list;
 
