@@ -6,13 +6,13 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 13:13:53 by apigeon           #+#    #+#             */
-/*   Updated: 2021/12/01 17:26:08 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/12/04 16:37:50 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-int	contains_newline(const char *s)
+static int	contains_newline(const char *s)
 {
 	int	i;
 
@@ -23,7 +23,7 @@ int	contains_newline(const char *s)
 	return (0);
 }
 
-int		getline_len(char *s)
+static int		getline_len(char *s)
 {
 	int	i;
 
@@ -37,7 +37,7 @@ int		getline_len(char *s)
 	return (i);
 }
 
-char	*extract_line(char *s, char **leftover)
+static char	*extract_line(char *s, char **leftover)
 {
 	int		i;
 	int		size;
@@ -64,7 +64,7 @@ char	*get_next_line(int fd)
 	char		*buff;
 	char		*tmp;
 	char		*string;
-	static char	*leftover[OPEN_MAX] = {NULL};
+	static char	*leftover[OPEN_MAX];
 
 	if (fd < 0 || BUFFER_SIZE < 1 || read(fd, leftover[fd], 0) == -1)
 		return (NULL);

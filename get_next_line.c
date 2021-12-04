@@ -6,7 +6,7 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 13:13:53 by apigeon           #+#    #+#             */
-/*   Updated: 2021/12/01 16:14:36 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/12/04 11:32:16 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ char	*extract_line(char *s, char **leftover)
 
 char	*get_next_line(int fd)
 {
-	int			ret;
 	char		*buff;
 	char		*tmp;
 	char		*string;
+	ssize_t		ret;
 	static char	*leftover = NULL;
 
 	if (fd < 0 || BUFFER_SIZE < 1 || read(fd, leftover, 0) == -1)
