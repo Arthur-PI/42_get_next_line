@@ -6,13 +6,13 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 13:13:53 by apigeon           #+#    #+#             */
-/*   Updated: 2021/12/04 11:32:16 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/12/08 11:32:25 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	contains_newline(const char *s)
+static int	contains_newline(const char *s)
 {
 	int	i;
 
@@ -23,7 +23,7 @@ int	contains_newline(const char *s)
 	return (0);
 }
 
-int		getline_len(char *s)
+static int	getline_len(char *s)
 {
 	int	i;
 
@@ -37,7 +37,7 @@ int		getline_len(char *s)
 	return (i);
 }
 
-char	*extract_line(char *s, char **leftover)
+static char	*extract_line(char *s, char **leftover)
 {
 	int		i;
 	int		size;

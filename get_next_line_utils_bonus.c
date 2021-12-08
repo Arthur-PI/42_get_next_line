@@ -6,11 +6,11 @@
 /*   By: apigeon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 19:15:24 by apigeon           #+#    #+#             */
-/*   Updated: 2021/12/01 17:27:23 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/12/08 11:33:09 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	ft_strlen(const char *s)
 {
@@ -67,4 +67,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		i++;
 	return (i);
 }
-

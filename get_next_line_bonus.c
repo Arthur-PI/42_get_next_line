@@ -6,7 +6,7 @@
 /*   By: apigeon <apigeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 13:13:53 by apigeon           #+#    #+#             */
-/*   Updated: 2021/12/04 16:37:50 by apigeon          ###   ########.fr       */
+/*   Updated: 2021/12/08 10:56:08 by apigeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	contains_newline(const char *s)
 	return (0);
 }
 
-static int		getline_len(char *s)
+static int	getline_len(char *s)
 {
 	int	i;
 
